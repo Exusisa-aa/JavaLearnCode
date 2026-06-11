@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--开头必写改标签，且根目录只有一个-->
+<users>
+    <user id="1">
+        <name>陈生</name>
+        <age>18</age>
+        <gender>男</gender>
+        <address>广州</address>
+<!--可用CD生成特殊符号区CDATA-->
+        <![CDATA[
+            2>5&"'
+        ]]>
+    </user>
+    <user id="2">
+        <name>张生</name>
+        <age>23</age>
+        <gender>男</gender>
+        <address>上海</address>
+    </user>
+    <user id="3">
+        <name>邱生</name>
+        <age>40</age>
+        <gender>男</gender>
+        <address>深圳</address>
+    </user>
+</users>

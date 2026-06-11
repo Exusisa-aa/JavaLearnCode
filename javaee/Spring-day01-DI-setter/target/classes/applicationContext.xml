@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="maintainer" name="maintainer2 maintainer3" class="com.self.learnFile.pojo.implement.Maintainer" >
+        <property name="databaseName" value="mysql" />
+        <property name="databaseSize" value="100" />
+    </bean>
+
+    <bean id="workService" name="workService2 workService3" class="com.self.learnFile.service.implement.WorkService" scope="prototype">
+        <property name="maintainer" ref="maintainer" />
+    </bean>
+
+
+</beans>

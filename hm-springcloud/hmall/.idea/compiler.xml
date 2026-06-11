@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cart-dto" />
+        <module name="item-biz" />
+        <module name="trade-biz" />
+        <module name="pay-dto" />
+        <module name="pay-api" />
+        <module name="user-dto" />
+        <module name="pay-biz" />
+        <module name="user-api" />
+        <module name="hm-gateway" />
+        <module name="hm-common" />
+        <module name="cart-biz" />
+        <module name="item-dto" />
+        <module name="trade-dto" />
+        <module name="hm-service" />
+        <module name="cart-api" />
+        <module name="item-api" />
+        <module name="user-biz" />
+        <module name="trade-api" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cart-api" options="-parameters" />
+      <module name="cart-biz" options="-parameters" />
+      <module name="cart-dto" options="-parameters" />
+      <module name="cart-service" options="" />
+      <module name="hm-common" options="-parameters" />
+      <module name="hm-gateway" options="-parameters" />
+      <module name="hm-service" options="-parameters" />
+      <module name="item-api" options="-parameters" />
+      <module name="item-biz" options="-parameters" />
+      <module name="item-dto" options="-parameters" />
+      <module name="item-service" options="" />
+      <module name="pay-api" options="-parameters" />
+      <module name="pay-biz" options="-parameters" />
+      <module name="pay-dto" options="-parameters" />
+      <module name="pay-service" options="" />
+      <module name="trade-api" options="-parameters" />
+      <module name="trade-biz" options="-parameters" />
+      <module name="trade-dto" options="-parameters" />
+      <module name="trade-service" options="" />
+      <module name="user-api" options="-parameters" />
+      <module name="user-biz" options="-parameters" />
+      <module name="user-dto" options="-parameters" />
+      <module name="user-service" options="" />
+    </option>
+  </component>
+</project>

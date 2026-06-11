@@ -1,0 +1,9 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.hmall.common.config.MyBatisConfig,\
+  com.hmall.common.config.MessageConverterConfig,\
+  com.hmall.common.config.ErrorMessageConfig,\
+  com.hmall.common.config.BeforeDLXConfig,\
+  com.hmall.common.config.ReturnConfig,\
+  com.hmall.common.config.InterceptorConfig,\
+  com.hmall.common.config.FeignConfig,\
+  com.hmall.common.config.JsonConfig

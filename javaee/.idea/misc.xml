@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Spring-day01/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day01-bean/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day01-annotation-bean/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day01-autowire/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day01-basis/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day01-beanLifeTime/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day01-container/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day01-datasource/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day01-DI-collection/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day01-DI-constructor/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day01-DI-setter/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day01-annotation-datasource/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day02-mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day02-mybatis-junits/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day02-aop-quickStart/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day02-aop-test10000times/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC-day01-quickStart/pom.xml" />
+        <option value="$PROJECT_DIR$/Maven-day01-split/pom.xml" />
+        <option value="$PROJECT_DIR$/Maven-day01-splitPojo/pom.xml" />
+        <option value="$PROJECT_DIR$/Maven-day01-splitMapper/pom.xml" />
+        <option value="$PROJECT_DIR$/PomRootProject/pom.xml" />
+        <option value="$PROJECT_DIR$/Springboot-day01-quickStart/pom.xml" />
+        <option value="$PROJECT_DIR$/Springboot-day02-final/pom.xml" />
+        <option value="$PROJECT_DIR$/MyBatisPlus-day01-quickStart/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringAI-day01-quickStart/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Maven-day01-split/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-day02-aop-test10000times/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

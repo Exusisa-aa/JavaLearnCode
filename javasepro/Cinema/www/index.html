@@ -1,0 +1,2536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<style>
+  html,
+  body {
+    position: relative;
+    height: 100%;
+  }
+
+  body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  /* 使用伪元素创建背景层 */
+  .swiper-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 18, 18, 0.5);
+    filter: blur(3rem);
+    z-index: 1;
+    /* 置于底层 */
+  }
+
+  .swiper-container {
+    position: relative;
+    /* 添加定位上下文 */
+    height: 8rem;
+    overflow: hidden;
+  }
+
+  .swiper-wrapper {
+    position: relative;
+    /* 保证内容在上层 */
+    z-index: 2;
+    /* 高于背景层 */
+  }
+
+  .swiper-container {
+    height: 8rem;
+    overflow: hidden;
+  }
+
+  .swiper-slide {
+    height: 4.68rem;
+    text-align: center;
+    background: #fff;
+    width: 5.36rem !important;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    transition: 300ms;
+    transform: scale(0.8) !important;
+    margin-top: 1.4rem;
+  }
+
+  .swiper-slide-active,
+  .swiper-slide-duplicate-active {
+    transform: scale(1) !important;
+  }
+
+  @media screen and (min-width: 320px) {
+    html {
+      font-size: 21.33333333px;
+    }
+  }
+
+  @media screen and (min-width: 360px) {
+    html {
+      font-size: 24px;
+    }
+  }
+
+  @media screen and (min-width: 375px) {
+    html {
+      font-size: 25px;
+    }
+  }
+
+  @media screen and (min-width: 384px) {
+    html {
+      font-size: 25.6px;
+    }
+  }
+
+  @media screen and (min-width: 400px) {
+    html {
+      font-size: 26.66666667px;
+    }
+  }
+
+  @media screen and (min-width: 414px) {
+    html {
+      font-size: 27.6px;
+    }
+  }
+
+  @media screen and (min-width: 424px) {
+    html {
+      font-size: 28.26666667px;
+    }
+  }
+
+  @media screen and (min-width: 480px) {
+    html {
+      font-size: 32px;
+    }
+  }
+
+  @media screen and (min-width: 540px) {
+    html {
+      font-size: 36px;
+    }
+  }
+
+  @media screen and (min-width: 720px) {
+    html {
+      font-size: 48px;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    html {
+      font-size: 50px;
+    }
+  }
+
+  body {
+    background-color: #e5e5e5;
+  }
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all linear 0.01s;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .banner {
+    width: 24rem;
+    margin: 0 auto;
+    border-left: .04rem solid black;
+    border-right: .04rem solid black;
+  }
+
+  .head_nav {
+    padding: .1rem .2rem .1rem;
+    display: flex;
+    background-color: white;
+  }
+
+  .head_nav_name {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    background-color: white;
+  }
+
+  .address {
+    font-size: .6rem;
+    color: #aaa8a8;
+    background-color: white;
+  }
+
+  .head_nav_button {
+    display: flex;
+    justify-content: space-between;
+    padding: .1rem .2rem .1rem;
+    background-color: white;
+  }
+
+  .left,
+  .right,
+  .middle {
+    position: relative;
+    flex: 1;
+  }
+
+  .middle {
+    position: relative;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .left a {
+    display: block;
+    background-color: rgba(255, 55, 0, 0.5);
+    border: 0.02rem solid #ff5900;
+    border-radius: .1rem;
+    color: #ff3c00;
+    padding-left: .4rem;
+    padding-top: .4rem;
+    padding-bottom: .8rem;
+  }
+
+  .middle a {
+    display: block;
+    background-color: rgba(244, 10, 178, 0.5);
+    border: 0.02rem solid #ff007b;
+    border-radius: .1rem;
+    color: #ff007b;
+    padding-left: .4rem;
+    padding-top: .4rem;
+    padding-bottom: .8rem;
+  }
+
+  .middle::after {
+    content: "3折起";
+    width: 1.6rem;
+    height: 0.8rem;
+    background-color: red;
+    color: white;
+    position: absolute;
+    right: -0.2rem;
+    top: -0.2rem;
+    border-radius: .2rem;
+    font-size: .6rem;
+    line-height: 0.8rem;
+    text-align: center;
+  }
+
+  .right a {
+    display: block;
+    background-color: rgba(255, 174, 0, 0.5);
+    border: 0.02rem solid #f38005;
+    border-radius: .1rem;
+    color: #f36c05;
+    padding-left: .4rem;
+    padding-top: .4rem;
+    padding-bottom: .8rem;
+  }
+
+  .font {
+    padding-right: 0.4rem;
+    padding-top: .4rem;
+    background-color: white;
+  }
+
+  .font a {
+    font-weight: 700;
+    color: orangered;
+    background-color: white;
+  }
+
+  .font a:hover {
+    color: black;
+  }
+
+  .left a::after {
+    content: "薯条，爆米花，可乐等等";
+    position: absolute;
+    font-size: .6rem;
+    bottom: 0;
+    left: .4rem;
+  }
+
+  .middle a::after {
+    content: "超低折扣，限量专属";
+    position: absolute;
+    font-size: .6rem;
+    bottom: 0;
+    left: .4rem;
+  }
+
+  .right a::after {
+    content: "开卡享优惠";
+    position: absolute;
+    font-size: .6rem;
+    bottom: 0;
+    left: .4rem;
+  }
+
+  .bottom_nav {
+    margin-top: .6rem;
+    border-top: .02rem solid #9a9898;
+  }
+
+  .top_nav {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .lefteat {
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+    margin-left: 0.8rem;
+    line-height: 2.2rem;
+    background-color: white;
+  }
+
+  .rightsession {
+    font-size: .6rem;
+    align-self: center;
+    background-color: white;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .mainbody ul li {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: red;
+    height: 6rem;
+    border-top: .02rem solid #9a9898;
+  }
+
+  .mainbody ul li:nth-child(3) {
+    margin-bottom: 1rem;
+    border-bottom: .02rem solid #9a9898;
+  }
+
+  .mainbody ul li a {
+    background-color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mainbody ul li a span:first-child {
+    background-color: white;
+    display: block;
+    font-size: .4rem;
+    color: black;
+    margin-left: .4rem;
+    margin-top: .4rem;
+  }
+
+  .mainbody ul li a img {
+    display: inline-block;
+    width: 2.5rem;
+    height: 3rem;
+    margin-left: .4rem;
+    margin-top: .4rem;
+  }
+
+  .mainbody ul li a h6 {
+    background-color: white;
+    display: inline-block;
+    color: black;
+    margin-left: .8rem;
+    position: absolute;
+    top: 1.5rem;
+    left: 3rem;
+    font-size: .6rem;
+  }
+
+  .mainbody ul li a .price {
+    background-color: white;
+    color: red;
+    margin-left: .8rem;
+    position: absolute;
+    top: 3.7rem;
+    left: 3rem;
+    font-size: .6rem;
+  }
+
+  .eat1,
+  .eat2,
+  .eat3 {
+    position: relative;
+  }
+
+  .buy {
+    background-color: white;
+    width: 1.2rem;
+    height: .6rem;
+    border: red solid .02rem;
+    border-radius: .2rem;
+    position: absolute;
+    bottom: 1.6rem;
+    right: .8rem;
+    font-size: .4rem;
+    font-weight: 200;
+    color: red;
+    text-align: center;
+  }
+
+  .lbt {
+    height: 8rem;
+    overflow: hidden;
+  }
+
+
+
+
+
+  .top_message {
+    background-color: white;
+    height: 3.6rem;
+    padding-top: 0.5rem;
+    font-size: .6rem;
+    text-align: center;
+    border-bottom: #9a9898 solid .01rem;
+  }
+
+  .top_message .rate {
+    font-size: .52rem;
+    color: orange;
+  }
+
+  .movies {
+    position: relative;
+  }
+
+  .sj {
+    position: absolute;
+    height: .48rem;
+    width: .48rem;
+    background-color: white;
+    right: 50%;
+    transform: translateX(50%) rotate(45deg);
+    top: -0.18rem;
+    z-index: 3;
+  }
+
+  .date_message {
+    background-color: white;
+    display: flex;
+    font-size: .32rem;
+    text-align: center;
+    height: 1.1rem;
+    padding-top: .3rem;
+  }
+
+  .date_message div {
+    flex: 1;
+    cursor: pointer;
+  }
+
+  .date_active {
+    border-bottom: red solid .1rem;
+  }
+
+  .time_message a {
+    display: block;
+    height: 2.6rem;
+    border-bottom: #9a9898 solid .02rem;
+    font-size: .36rem;
+    background-color: white;
+  }
+
+  .time_message a .left_session {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 2.6rem;
+    font-size: .6rem;
+    width: 3.3rem;
+    align-items: center;
+    padding-left: .4rem;
+  }
+
+  .time_message a .left_session span:nth-child(1) {
+    color: black;
+  }
+
+  .time_message a .left_session span:nth-child(2) {
+    color: #aaa8a8;
+    font-size: .32rem;
+  }
+
+  .time_message a .middle_session {
+    float: left;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 2.6rem;
+    font-size: .6rem;
+    width: 11rem;
+    padding-left: 4rem;
+  }
+
+  .time_message a .middle_session span:nth-child(1) {
+    color: black;
+  }
+
+  .time_message a .middle_session span:nth-child(2) {
+    color: #aaa8a8;
+    font-size: .32rem;
+  }
+
+  .time_message a .right_session {
+    float: left;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 2.6rem;
+    font-size: .6rem;
+    width: 3rem;
+    margin-left: 5.8rem;
+  }
+
+  .time_message a .right_session span:nth-child(1) {
+    color: orangered;
+  }
+
+  .time_message a .right_session button {
+    width: 1rem;
+    height: .8rem;
+    border: #f36c05 solid .02rem;
+    color: #f36c05;
+    background-color: white;
+    border-radius: .6rem .6rem .6rem .6rem;
+    cursor: pointer;
+  }
+</style>
+
+<body>
+  <!-- 头部 -->
+  <div class="head_nav banner">
+    <div class="head_nav_name">
+      光明4KIMAX国际影城
+      <span class="address">xxx路xxx号</span>
+    </div>
+    <div class="font"><a href="#">定位</a></div>
+  </div>
+  <div class="head_nav_button banner">
+    <div class="left"><a href="#">观影小吃</a></div>
+    <div class="middle"><a href="#">影院券包</a></div>
+    <div class="right"><a href="#">影城卡</a></div>
+  </div>
+  <!-- 身体 -->
+  <!-- Swiper -->
+  <div class="lbt banner">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="pictures/afd.jpg" alt="" data-num="0"></div>
+        <div class="swiper-slide"><img src="pictures/xjcy.jpg" alt="" data-num="1"></div>
+        <div class="swiper-slide"><img src="pictures/lldq.jpg" alt="" data-num="2"></div>
+        <div class="swiper-slide"><img src="pictures/xskdjs.jpg" alt="" data-num="3"></div>
+        <div class="swiper-slide"><img src="pictures/bwbj.jpg" alt="" data-num="4"></div>
+        <div class="swiper-slide"><img src="pictures/xt.jpg" alt="" data-num="5"></div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  <!-- 电影详情 -->
+  <div class="movies banner">
+    <div class="sj"></div>
+    <div class="top_message">
+      <div class="top_name">阿凡达</div>
+      <div class="rate">8.8分</div>
+      <span class="detail">162分钟|动作/科幻/冒险|詹姆斯·卡梅隆|萨姆·沃辛顿/佐伊·索尔达娜/西格妮·韦弗</span>
+    </div>
+    <div class="date_message">
+      <div class="cli date_active" data-id="0">5月7日</div>
+      <div class="cli" data-id="1">5月8日</div>
+      <div class="cli" data-id="2">5月9日</div>
+      <div class="cli" data-id="3">5月10日</div>
+      <div class="cli" data-id="4">5月11日</div>
+      <div class="cli" data-id="5">5月12日</div>
+    </div>
+    <div class="time_message">
+      <a href="#">
+        <div class="left_session">
+          <span class="start">08:00</span>
+          <span class="end">11:00散场</span>
+        </div>
+        <div class="middle_session">
+          <span class="type">英语2D</span>
+          <span class="hall_num">1号放映厅</span>
+        </div>
+        <div class="right_session">
+          <span class="price">￥38</span>
+          <button class="perchuse">购票</button>
+        </div>
+      </a>
+      <a href="#">
+        <div class="left_session">
+          <span class="start">11:10</span>
+          <span class="end">14:10散场</span>
+        </div>
+        <div class="middle_session">
+          <span class="type">英语2D</span>
+          <span class="hall_num">1号放映厅</span>
+        </div>
+        <div class="right_session">
+          <span class="price">￥38</span>
+          <button class="perchuse">购票</button>
+        </div>
+      </a>
+      <a href="#">
+        <div class="left_session">
+          <span class="start">14:20</span>
+          <span class="end">17:20散场</span>
+        </div>
+        <div class="middle_session">
+          <span class="type">英语2D</span>
+          <span class="hall_num">2号放映厅</span>
+        </div>
+        <div class="right_session">
+          <span class="price">￥38</span>
+          <button class="perchuse">购票</button>
+        </div>
+      </a>
+      <a href="#">
+        <div class="left_session">
+          <span class="start">17:30</span>
+          <span class="end">20:30散场</span>
+        </div>
+        <div class="middle_session">
+          <span class="type">英语3D</span>
+          <span class="hall_num">2号放映厅</span>
+        </div>
+        <div class="right_session">
+          <span class="price">￥48</span>
+          <button class="perchuse">购票</button>
+        </div>
+      </a>
+      <a href="#">
+        <div class="left_session">
+          <span class="start">20:40</span>
+          <span class="end">23:40散场</span>
+        </div>
+        <div class="middle_session">
+          <span class="type">英语2D</span>
+          <span class="hall_num">6号放映厅(IMAX,中国巨幕)</span>
+        </div>
+        <div class="right_session">
+          <span class="price">￥68</span>
+          <button class="perchuse">购票</button>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!-- 底部 -->
+  <div class="bottom_nav banner">
+    <div class="top_nav">
+      <h4 class="lefteat">观影小吃</h4>
+      <span class="rightsession">电影和可乐爆米花最配哦！</span>
+    </div>
+    <div class="mainbody">
+      <ul>
+        <li class="eat1">
+          <a href="#">
+            <span>单人餐</span>
+            <img src="pictures/1.jpg" alt="">
+            <h6>46oz爆米花1桶+16oz可乐</h6>
+            <span class="price">￥30.8</span>
+            <div class="buy">购买</div>
+          </a>
+        </li>
+        <li class="eat2">
+          <a href="#">
+            <span>双人餐</span>
+            <img src="pictures/2.jpg" alt="">
+            <h6>64oz爆米花1桶+16oz可乐两杯</h6>
+            <span class="price">￥49.5</span>
+            <div class="buy">购买</div>
+          </a>
+        </li>
+        <li class="eat3">
+          <a href="#">
+            <span>多人餐</span>
+            <img src="pictures/3.jpg" alt="">
+            <h6>85oz爆米花1桶+22oz可乐三杯</h6>
+            <span class="price">￥63.8</span>
+            <div class="buy">购买</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+
+    const movies = [
+      {
+        movieName: "阿凡达",
+        movieType: "动作/科幻/冒险",
+        director: "詹姆斯·卡梅隆",
+        actors: "萨姆·沃辛顿/佐伊·索尔达娜/西格妮·韦弗",
+        lastTime: "162分钟",
+        rate: "8.8",
+        screenDays: [
+          {
+            date: "5月7日",
+            screenTimes: [
+              {
+                hallName: "1号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              }
+            ]
+          },
+          {
+            date: "5月8日",
+            screenTimes: [
+              {
+                hallName: "1号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              }
+            ]
+          },
+          {
+            date: "5月9日",
+            screenTimes: [
+              {
+                hallName: "1号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              }
+            ]
+          },
+          {
+            date: "5月10日",
+            screenTimes: [
+              {
+                hallName: "1号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              }
+            ]
+          },
+          {
+            date: "5月11日",
+            screenTimes: [
+              {
+                hallName: "1号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              }
+            ]
+          },
+          {
+            date: "5月12日",
+            screenTimes: [
+              {
+                hallName: "1号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        movieName: "星际穿越",
+        movieType: "剧情/科幻/冒险",
+        director: "克里斯托弗·诺兰",
+        actors: "马修·麦康纳/安妮·海瑟薇/杰西卡·查斯坦",
+        lastTime: "169分钟",
+        rate: "9.4",
+        screenDays: [
+          {
+            date: "5月7日",
+            screenTimes: [
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "3D",
+                language: "英语",
+                price: "￥78"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              }
+            ]
+          },
+          {
+            date: "5月8日",
+            screenTimes: [
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "3D",
+                language: "英语",
+                price: "￥78"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              }
+            ]
+          },
+          {
+            date: "5月9日",
+            screenTimes: [
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "3D",
+                language: "英语",
+                price: "￥78"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              }
+            ]
+          },
+          {
+            date: "5月10日",
+            screenTimes: [
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "3D",
+                language: "英语",
+                price: "￥78"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              }
+            ]
+          },
+          {
+            date: "5月11日",
+            screenTimes: [
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "3D",
+                language: "英语",
+                price: "￥78"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              }
+            ]
+          },
+          {
+            date: "5月12日",
+            screenTimes: [
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "3D",
+                language: "英语",
+                price: "￥78"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        movieName: "流浪地球2",
+        movieType: "科幻/冒险/灾难",
+        director: "郭帆",
+        actors: "吴京/刘德华/李雪健",
+        lastTime: "173分钟",
+        rate: "8.3",
+        screenDays: [
+          {
+            date: "5月7日",
+            screenTimes: [
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              }
+            ]
+          },
+          {
+            date: "5月8日",
+            screenTimes: [
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              }
+            ]
+          },
+          {
+            date: "5月9日",
+            screenTimes: [
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              }
+            ]
+          },
+          {
+            date: "5月10日",
+            screenTimes: [
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              }
+            ]
+          },
+          {
+            date: "5月11日",
+            screenTimes: [
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              }
+            ]
+          },
+          {
+            date: "5月12日",
+            screenTimes: [
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "国语",
+                price: "￥58"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        movieName: "肖申克的救赎",
+        movieType: "剧情/犯罪",
+        director: "弗兰克·德拉邦特",
+        actors: "蒂姆·罗宾斯/摩根·弗里曼/鲍勃·冈顿",
+        lastTime: "142分钟",
+        rate: "9.7",
+        screenDays: [
+          {
+            date: "5月7日",
+            screenTimes: [
+              {
+                hallName: "3号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              }
+            ]
+          },
+          {
+            date: "5月8日",
+            screenTimes: [
+              {
+                hallName: "3号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              }
+            ]
+          },
+          {
+            date: "5月9日",
+            screenTimes: [
+              {
+                hallName: "3号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              }
+            ]
+          },
+          {
+            date: "5月10日",
+            screenTimes: [
+              {
+                hallName: "3号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              }
+            ]
+          },
+          {
+            date: "5月11日",
+            screenTimes: [
+              {
+                hallName: "3号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              }
+            ]
+          },
+          {
+            date: "5月12日",
+            screenTimes: [
+              {
+                hallName: "3号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "3号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        movieName: "霸王别姬",
+        movieType: "剧情/爱情/同性",
+        director: "陈凯歌",
+        actors: "张国荣/张丰毅/巩俐",
+        lastTime: "171分钟",
+        rate: "9.6",
+        screenDays: [
+          {
+            date: "5月7日",
+            screenTimes: [
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              }
+            ]
+          },
+          {
+            date: "5月8日",
+            screenTimes: [
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              }
+            ]
+          },
+          {
+            date: "5月9日",
+            screenTimes: [
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              }
+            ]
+          },
+          {
+            date: "5月10日",
+            screenTimes: [
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              }
+            ]
+          },
+          {
+            date: "5月11日",
+            screenTimes: [
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              }
+            ]
+          },
+          {
+            date: "5月12日",
+            screenTimes: [
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "5号放映厅(中国巨幕)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              },
+              {
+                hallName: "4号放映厅(IMAX)",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "国语",
+                price: "￥48"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        movieName: "信条",
+        movieType: "剧情/动作/科幻",
+        director: "克里斯托弗·诺兰",
+        actors: "约翰·大卫·华盛顿/罗伯特·帕丁森/伊丽莎白·德比齐",
+        lastTime: "150分钟",
+        rate: "7.6",
+        screenDays: [
+          {
+            date: "5月7日",
+            screenTimes: [
+              {
+                hallName: "2号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              }
+            ]
+          },
+          {
+            date: "5月8日",
+            screenTimes: [
+              {
+                hallName: "2号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              }
+            ]
+          },
+          {
+            date: "5月9日",
+            screenTimes: [
+              {
+                hallName: "2号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              }
+            ]
+          },
+          {
+            date: "5月10日",
+            screenTimes: [
+              {
+                hallName: "2号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              }
+            ]
+          },
+          {
+            date: "5月11日",
+            screenTimes: [
+              {
+                hallName: "2号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              }
+            ]
+          },
+          {
+            date: "5月12日",
+            screenTimes: [
+              {
+                hallName: "2号放映厅",
+                startTime: "08:00",
+                endTime: "11:00",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              },
+              {
+                hallName: "2号放映厅",
+                startTime: "11:10",
+                endTime: "14:10",
+                dimension: "3D",
+                language: "英语",
+                price: "￥48"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "14:20",
+                endTime: "17:20",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "6号放映厅(IMAX,中国巨幕)",
+                startTime: "17:30",
+                endTime: "20:30",
+                dimension: "2D",
+                language: "英语",
+                price: "￥68"
+              },
+              {
+                hallName: "1号放映厅",
+                startTime: "20:40",
+                endTime: "23:40",
+                dimension: "2D",
+                language: "英语",
+                price: "￥38"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+
+
+
+    // swiper
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 4.1,
+      spaceBetween: 30,
+      centeredSlides: true,
+      loop: false,
+
+      slideToClickedSlide: true,
+      centeredSlides: true,
+    });
+
+    //movies部分
+    const movie = document.querySelector(".movies")
+    for (let i = 0; i < movies.length; i++) {
+      document.querySelector(".swiper-wrapper").addEventListener("click", function (e) {
+        if (e.target.tagName === "IMG") {
+          movie.innerHTML = `
+          <div class="sj"></div>
+          <div class="top_message">
+            <div class="top_name">${movies[e.target.dataset.num].movieName}</div>
+            <div class="rate">${movies[e.target.dataset.num].rate}</div>
+            <span class="detail">${movies[e.target.dataset.num].lastTime}|${movies[e.target.dataset.num].movieType}|${movies[e.target.dataset.num].director}|${movies[e.target.dataset.num].actors}</span>
+          </div>
+            <div class="date_message">
+            <div class="cli date_active"  data-id="0">${movies[e.target.dataset.num].screenDays[0].date}</div>
+            <div class="cli" data-id="1">${movies[e.target.dataset.num].screenDays[1].date}</div>
+            <div class="cli" data-id="2">${movies[e.target.dataset.num].screenDays[2].date}</div>
+            <div class="cli" data-id="3">${movies[e.target.dataset.num].screenDays[3].date}</div>
+            <div class="cli" data-id="4">${movies[e.target.dataset.num].screenDays[4].date}</div>
+            <div class="cli" data-id="5">${movies[e.target.dataset.num].screenDays[5].date}</div>
+          </div>
+          <div class="time_message">
+            <a href="#">
+              <div class="left_session">
+                <span class="start">${movies[e.target.dataset.num].screenDays[0].screenTimes[0].startTime}</span>
+                <span class="end">${movies[e.target.dataset.num].screenDays[0].screenTimes[0].endTime}散场</span>
+              </div>
+              <div class="middle_session">
+                <span class="type">${movies[e.target.dataset.num].screenDays[0].screenTimes[0].language}${movies[e.target.dataset.num].screenDays[0].screenTimes[0].dimension}</span>
+                <span class="hall_num">${movies[e.target.dataset.num].screenDays[0].screenTimes[0].hallName}</span>
+              </div>
+              <div class="right_session">
+                <span class="price">${movies[e.target.dataset.num].screenDays[0].screenTimes[0].price}</span>
+                <button class="perchuse">购票</button>
+              </div>
+            </a>
+            <a href="#">
+              <div class="left_session">
+                <span class="start">${movies[e.target.dataset.num].screenDays[0].screenTimes[1].startTime}</span>
+                <span class="end">${movies[e.target.dataset.num].screenDays[0].screenTimes[1].endTime}散场</span>
+              </div>
+              <div class="middle_session">
+                <span class="type">${movies[e.target.dataset.num].screenDays[0].screenTimes[1].language}${movies[e.target.dataset.num].screenDays[0].screenTimes[1].dimension}</span>
+                <span class="hall_num">${movies[e.target.dataset.num].screenDays[0].screenTimes[1].hallName}</span>
+              </div>
+              <div class="right_session">
+                <span class="price">${movies[e.target.dataset.num].screenDays[0].screenTimes[1].price}</span>
+                <button class="perchuse">购票</button>
+              </div>
+            </a><a href="#">
+              <div class="left_session">
+                <span class="start">${movies[e.target.dataset.num].screenDays[0].screenTimes[2].startTime}</span>
+                <span class="end">${movies[e.target.dataset.num].screenDays[0].screenTimes[2].endTime}散场</span>
+              </div>
+              <div class="middle_session">
+                <span class="type">${movies[e.target.dataset.num].screenDays[0].screenTimes[2].language}${movies[e.target.dataset.num].screenDays[0].screenTimes[2].dimension}</span>
+                <span class="hall_num">${movies[e.target.dataset.num].screenDays[0].screenTimes[2].hallName}</span>
+              </div>
+              <div class="right_session">
+                <span class="price">${movies[e.target.dataset.num].screenDays[0].screenTimes[2].price}</span>
+                <button class="perchuse">购票</button>
+              </div>
+            </a><a href="#">
+              <div class="left_session">
+                <span class="start">${movies[e.target.dataset.num].screenDays[0].screenTimes[3].startTime}</span>
+                <span class="end">${movies[e.target.dataset.num].screenDays[0].screenTimes[3].endTime}散场</span>
+              </div>
+              <div class="middle_session">
+                <span class="type">${movies[e.target.dataset.num].screenDays[0].screenTimes[3].language}${movies[e.target.dataset.num].screenDays[0].screenTimes[3].dimension}</span>
+                <span class="hall_num">${movies[e.target.dataset.num].screenDays[0].screenTimes[3].hallName}</span>
+              </div>
+              <div class="right_session">
+                <span class="price">${movies[e.target.dataset.num].screenDays[0].screenTimes[3].price}</span>
+                <button class="perchuse">购票</button>
+              </div>
+            </a><a href="#">
+              <div class="left_session">
+                <span class="start">${movies[e.target.dataset.num].screenDays[0].screenTimes[4].startTime}</span>
+                <span class="end">${movies[e.target.dataset.num].screenDays[0].screenTimes[4].endTime}散场</span>
+              </div>
+              <div class="middle_session">
+                <span class="type">${movies[e.target.dataset.num].screenDays[0].screenTimes[4].language}${movies[e.target.dataset.num].screenDays[0].screenTimes[4].dimension}</span>
+                <span class="hall_num">${movies[e.target.dataset.num].screenDays[0].screenTimes[4].hallName}</span>
+              </div>
+              <div class="right_session">
+                <span class="price">${movies[e.target.dataset.num].screenDays[0].screenTimes[4].price}</span>
+                <button class="perchuse">购票</button>
+              </div>
+            </a>
+          </div>
+          `
+        }
+      })
+    }
+
+
+    document.querySelector('.movies').addEventListener('click', function (e) {
+      if (e.target.classList.contains('cli')) {
+        const movieIndex = document.querySelector('.swiper-slide-active img').dataset.num
+        const dateIndex = e.target.dataset.id
+
+
+        document.querySelectorAll('.cli').forEach(el => el.classList.remove('date_active'))
+        e.target.classList.add('date_active')
+
+        // 更新放映场次（需要重构场次生成逻辑）
+        const timeMessage = this.querySelector('.time_message')
+        timeMessage.innerHTML = movies[movieIndex].screenDays[dateIndex].screenTimes
+          .map(session => `
+                <a href="#">
+                    <div class="left_session">
+                        <span class="start">${session.startTime}</span>
+                        <span class="end">${session.endTime}散场</span>
+                    </div>
+                    <div class="middle_session">
+                        <span class="type">${session.language}${session.dimension}</span>
+                        <span class="hall_num">${session.hallName}</span>
+                    </div>
+                    <div class="right_session">
+                        <span class="price">${session.price}</span>
+                        <button class="perchuse">购票</button>
+                    </div>
+                </a>
+            `).join('')
+      }
+    })
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Spring-day01-container" />
+        <module name="Maven-day01-splitPojo" />
+        <module name="MyBatisPlus-day01-quickStart" />
+        <module name="Spring-day02-mybatis-junits" />
+        <module name="Spring-day01-annotation-bean" />
+        <module name="Spring-day01-autowire" />
+        <module name="SpringMVC-day01-quickStart" />
+        <module name="Spring-day01-bean" />
+        <module name="Spring-day01-beanLifeTime" />
+        <module name="Maven-day01-splitMapper" />
+        <module name="Spring-day01-DI-constructor" />
+        <module name="Springboot-day01-quickStart" />
+        <module name="Spring-day02-aop-quickStart" />
+        <module name="Spring-day01-DI-collection" />
+        <module name="Spring-day01-annotation-datasource" />
+        <module name="Springboot-day02-final" />
+        <module name="Spring-day01-datasource" />
+        <module name="Spring-day01-DI-setter" />
+        <module name="Spring-day01-basis" />
+        <module name="SpringAI-day01-quickStart" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Spring-day02-aop-test10000times" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="MyBatisPlus-day01-quickStart" options="-parameters" />
+      <module name="SpringAI-day01-quickStart" options="-parameters" />
+      <module name="Springboot-day01-quickStart" options="-parameters" />
+      <module name="Springboot-day02-final" options="-parameters" />
+    </option>
+  </component>
+</project>

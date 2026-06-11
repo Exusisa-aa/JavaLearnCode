@@ -1,0 +1,64 @@
+logging:
+  level:
+    root: info
+
+#people:
+#  name: "Jane"
+#  age: 18
+#  height: 170
+#  likes:
+#    - "play"
+#    - "eat"
+#    - "sleep"
+
+#启动环境
+spring:
+  profiles:
+    active: dev
+---
+#开发环境
+spring:
+  config:
+    activate:
+      on-profile: dev
+server:
+  port: 8080
+jdbc:
+  driverClassName: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://127.0.0.1:3306/ex?useServerPrepStmts=true
+  username: root
+  password: Aa2447439574
+---
+#测试环境
+spring:
+  config:
+    activate:
+      on-profile: test
+server:
+  port: 8081
+jdbc:
+  driverClassName: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://127.0.0.1:3306/ex?useServerPrepStmts=true
+  username: root
+  password: Aa2447439574
+---
+#生产环境
+spring:
+  config:
+    activate:
+      on-profile: prod
+server:
+  port: 8082
+jdbc:
+  driverClassName: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://127.0.0.1:3306/ex?useServerPrepStmts=true
+  username: root
+  password: Aa2447439574
+
+#resources下的application.yaml优先级：该文件最低，供开发人员直接使用
+#resources下的config下的application.yaml优先级：优先级略高，供最终配置敲定人使用
+#target下自建的application.yaml优先级：比上面都高，供测试人员和前端人员使用，方便他们的配置
+#target下自建的config下自建的application.yaml优先级：最高，供最终配置敲定人使用
+
+
+

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workers>
+    <worker workCode="75138559">
+        <workType>电影放映员</workType>
+        <name>cne</name>
+        <gender>男</gender>
+        <phone>15384238051</phone>
+        <password>22222</password>
+        <salary>22300.0</salary>
+        <workDays>
+            <workDay workDate="2025-05-23">
+                <isLeave>true</isLeave>
+                <workLeave>已请假，今日无排班</workLeave>
+            </workDay>
+            <workDay workDate="2025-05-24">
+                <isLeave>false</isLeave>
+                <workTimes>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>07:50</startWorkTime>
+                        <endWorkTime>08:00</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>11:00</startWorkTime>
+                        <endWorkTime>11:10</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>14:10</startWorkTime>
+                        <endWorkTime>14:20</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>17:20</startWorkTime>
+                        <endWorkTime>17:30</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>20:30</startWorkTime>
+                        <endWorkTime>20:40</endWorkTime>
+                    </workTime>
+                </workTimes>
+            </workDay>
+            <workDay workDate="2025-05-25">
+                <isLeave>false</isLeave>
+                <workTimes>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>07:50</startWorkTime>
+                        <endWorkTime>08:00</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>11:00</startWorkTime>
+                        <endWorkTime>11:10</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>14:10</startWorkTime>
+                        <endWorkTime>14:20</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>17:20</startWorkTime>
+                        <endWorkTime>17:30</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>20:30</startWorkTime>
+                        <endWorkTime>20:40</endWorkTime>
+                    </workTime>
+                </workTimes>
+            </workDay>
+            <workDay workDate="2025-05-26">
+                <isLeave>false</isLeave>
+                <workTimes>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>07:50</startWorkTime>
+                        <endWorkTime>08:00</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>11:00</startWorkTime>
+                        <endWorkTime>11:10</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>14:10</startWorkTime>
+                        <endWorkTime>14:20</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>17:20</startWorkTime>
+                        <endWorkTime>17:30</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>20:30</startWorkTime>
+                        <endWorkTime>20:40</endWorkTime>
+                    </workTime>
+                </workTimes>
+            </workDay>
+            <workDay workDate="2025-05-27">
+                <isLeave>false</isLeave>
+                <workTimes>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>07:50</startWorkTime>
+                        <endWorkTime>08:00</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>11:00</startWorkTime>
+                        <endWorkTime>11:10</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>14:10</startWorkTime>
+                        <endWorkTime>14:20</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>17:20</startWorkTime>
+                        <endWorkTime>17:30</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>20:30</startWorkTime>
+                        <endWorkTime>20:40</endWorkTime>
+                    </workTime>
+                </workTimes>
+            </workDay>
+            <workDay workDate="2025-05-28">
+                <isLeave>false</isLeave>
+                <workTimes>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>07:50</startWorkTime>
+                        <endWorkTime>08:00</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>11:00</startWorkTime>
+                        <endWorkTime>11:10</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>14:10</startWorkTime>
+                        <endWorkTime>14:20</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>17:20</startWorkTime>
+                        <endWorkTime>17:30</endWorkTime>
+                    </workTime>
+                    <workTime workerHall="6号放映厅(IMAX,中国巨幕)">
+                        <startWorkTime>20:30</startWorkTime>
+                        <endWorkTime>20:40</endWorkTime>
+                    </workTime>
+                </workTimes>
+            </workDay>
+        </workDays>
+        <leaveApplications>
+            <leaveApplication>
+                <index>1</index>
+                <message>已批准,理由:b,申请的日期:2025-05-23</message>
+            </leaveApplication>
+        </leaveApplications>
+    </worker>
+</workers>

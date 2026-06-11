@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../Spring-day01-DI-collection/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-DI-collection/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-DI-constructor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-DI-constructor/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-DI-setter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-DI-setter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-annotation-bean/Spring-day01-annotation-datasource/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-annotation-bean/Spring-day01-annotation-datasource/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-autowire/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-autowire/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-bean/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-bean/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-beanLifeTime/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-beanLifeTime/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-container/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-container/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-datasource/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../Spring-day01-datasource/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

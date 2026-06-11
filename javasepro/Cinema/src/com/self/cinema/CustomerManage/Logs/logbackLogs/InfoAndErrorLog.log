@@ -1,0 +1,6 @@
+2026-04-22 22:38:11.380 [pool-1-thread-1] INFO  LogTracerForCustomer - 用户系统已启动
+2026-04-22 22:38:38.681 [pool-1-thread-1] INFO  LogTracerForCustomer - 用户创建成功
+2026-04-22 22:38:45.044 [pool-1-thread-1] INFO  LogTracerForCustomer - 用户正在登陆中
+2026-04-22 22:38:45.048 [pool-1-thread-1] INFO  LogTracerForCustomer - 用户登陆成功
+2026-04-22 22:38:56.480 [pool-1-thread-1] INFO  LogTracerForCustomer - 用户正在查看电影信息
+2026-04-22 22:39:08.165 [pool-1-thread-1] INFO  LogTracerForCustomer - 用户充值成功

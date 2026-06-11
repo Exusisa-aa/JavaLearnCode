@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Spring-day01-DI-collection" />
+        <module name="Spring-day01-container" />
+        <module name="Spring-day01-autowire" />
+        <module name="Spring-day01-datasource" />
+        <module name="Spring-day01-bean" />
+        <module name="Spring-day01-DI-setter" />
+        <module name="Spring-day01-basis" />
+        <module name="Spring-day01-beanLifeTime" />
+        <module name="Spring-day01-DI-constructor" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="DI-setter" target="17" />
+      <module name="Spring-day01-annotation-bean" target="17" />
+      <module name="Spring-day01-annotation-bean1" target="17" />
+      <module name="Spring-day01-annotation-datasource" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

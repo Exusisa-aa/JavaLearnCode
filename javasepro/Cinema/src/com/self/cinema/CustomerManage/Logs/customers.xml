@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<customers> 
+    <customer UUID="96446561">
+        <name>chen</name>
+        <gender>男</gender>
+        <phone>15384238051</phone>
+        <userName>22222</userName>
+        <password>22222</password>
+        <money>2000.0</money>
+        <ip>/192.168.0.1</ip>
+        <comments/>
+    </customer>
+</customers>

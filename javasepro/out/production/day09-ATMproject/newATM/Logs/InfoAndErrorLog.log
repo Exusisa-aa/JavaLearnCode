@@ -1,0 +1,10 @@
+2025-05-09 14:39:56.611 [pool-1-thread-1] INFO  LogTracer - 追加对象输出流创建成功，继承上次运行数据
+2025-05-09 14:39:56.644 [pool-1-thread-1] INFO  LogTracer - 对象输入流创建成功，并接通accounts集合，已读取数据
+2025-05-09 14:39:56.648 [pool-1-thread-1] INFO  LogTracer - 已进入系统
+2025-05-09 14:40:02.988 [pool-1-thread-1] INFO  LogTracer - 该用户退出了系统系统，并更新了二进制日志与注册表日志
+2025-05-09 14:40:34.065 [pool-1-thread-1] INFO  LogTracer - 追加对象输出流创建成功，继承上次运行数据
+2025-05-09 14:40:34.070 [pool-1-thread-1] INFO  LogTracer - 对象输入流创建成功，并接通accounts集合，已读取数据
+2025-05-09 14:40:34.077 [pool-1-thread-1] INFO  LogTracer - 已进入系统
+2025-05-09 16:28:26.592 [pool-1-thread-1] INFO  LogTracer - 追加对象输出流创建成功，继承上次运行数据
+2025-05-09 16:28:26.610 [pool-1-thread-1] INFO  LogTracer - 对象输入流创建成功，并接通accounts集合，已读取数据
+2025-05-09 16:28:26.612 [pool-1-thread-1] INFO  LogTracer - 已进入系统

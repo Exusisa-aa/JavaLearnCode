@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<customers> 
+    <customer UUID="87837954">
+        <name>chen</name>
+        <gender>男</gender>
+        <phone>15384238051</phone>
+        <userName>22222</userName>
+        <password>22222</password>
+        <money>4000.0</money>
+        <ip>/192.168.1.5</ip>
+        <comments>
+            <comment>
+                <movieName>信条</movieName>
+                <content>脑洞太厉害了</content>
+                <time>2025-05-26 18:33:32</time>
+            </comment>
+        </comments>
+        <friends>
+            <friend>UUID42512392</friend>
+            <friend>UUID78892728</friend>
+        </friends>
+        <records>
+            <record>
+                <date>2025-05-27</date>
+                <startTime>08:00</startTime>
+                <endTime>11:00</endTime>
+                <place>2号放映厅</place>
+                <movieName>信条</movieName>
+                <movieType>剧情/动作/科幻</movieType>
+                <dimension>2D</dimension>
+                <director>克里斯托弗·诺兰</director>
+                <actors>约翰·大卫·华盛顿/罗伯特·帕丁森/伊丽莎白·德比齐</actors>
+                <rate>7.6</rate>
+                <language>英语</language>
+                <lastTime>150</lastTime>
+                <price>38.0</price>
+                <others>85oz爆米花1桶+22oz可乐三杯 60元</others>
+                <seatNumber>50</seatNumber>
+                <isCancel>true</isCancel>
+            </record>
+        </records>
+    </customer>
+    <customer UUID="42512392">
+        <name>杰瑞</name>
+        <gender>男</gender>
+        <phone>15384238051</phone>
+        <userName>33333</userName>
+        <password>33333</password>
+        <money>0.0</money>
+        <ip>/192.168.1.3</ip>
+        <comments/>
+        <friends>
+            <friend>UUID87837954</friend>
+        </friends>
+    </customer>
+    <customer UUID="78892728">
+        <name>彭</name>
+        <gender>男</gender>
+        <phone>15384238051</phone>
+        <userName>44444</userName>
+        <password>44444</password>
+        <money>0.0</money>
+        <ip>/192.168.1.3</ip>
+        <comments/>
+        <friends>
+            <friend>UUID87837954</friend>
+        </friends>
+    </customer>
+</customers>

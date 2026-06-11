@@ -1,0 +1,38 @@
+main/psvm:     public static void main(String[] args){
+				     }
+
+
+sout:     System.out.println();
+
+
+
+"Hello World".sout:     System.out.println("Hello World");
+
+
+
+ctrl+d:     向下复制一行
+
+
+
+ctrl+y：     删除一行
+
+
+
+ctrl+z：     撤回
+
+
+
+ctrl+alt+l:     格式化代码
+
+
+alt+shift+↑/↓：  上下移动当前代码
+
+
+
+ctrl+/:    注释    ctrl+shift＋/:   对选中的代码注释
+
+
+！！！！！！！！！！！alt＋回车：   更改警告和错误
+
+
+ctrl+alt+t ：                        对代码进行循环的包括

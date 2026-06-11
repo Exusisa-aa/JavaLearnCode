@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Maven-day01-split/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Maven-day01-split/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Maven-day01-splitMapper/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Maven-day01-splitMapper/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Maven-day01-splitPojo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Maven-day01-splitPojo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MyBatisPlus-day01-quickStart/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PomRootProject/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PomRootProject/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-DI-collection/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-DI-collection/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-DI-constructor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-DI-constructor/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-DI-setter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-DI-setter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-annotation-bean/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-annotation-bean/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-annotation-datasource/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-annotation-datasource/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-autowire/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-autowire/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-basis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-basis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-bean/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-bean/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-beanLifeTime/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-beanLifeTime/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-container/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-container/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-datasource/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day01-datasource/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day02-aop-quickStart/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day02-aop-quickStart/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day02-aop-test10000times/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day02-aop-test10000times/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day02-mybatis-junits/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring-day02-mybatis-junits/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringAI-day01-quickStart/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringMVC-day01-quickStart/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringMVC-day01-quickStart/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Springboot-day01-quickStart/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Springboot-day02-final/src/main/java" charset="UTF-8" />
+  </component>
+</project>
